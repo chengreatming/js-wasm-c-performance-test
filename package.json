@@ -1,0 +1,36 @@
+{
+  "name": "js-wasm-c-performance-test",
+  "version": "1.0.0",
+  "description": "test performance of JavaScript vs Webassembly vs C, in bilinearInterpolation.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./tests/test1.js && node ./tests/test2.js && ./tests/a.out",
+    "asbuild:untouched": "asc assembly/index.ts -b build/untouched.wasm -t build/untouched.wat --exportRuntime --sourceMap --debug",
+    "asbuild:optimized": "asc assembly/index.ts -b build/optimized.wasm -t build/optimized.wat --exportRuntime --sourceMap --optimize",
+    "asbuild": "npm run asbuild:untouched && npm run asbuild:optimized"
+  },
+  "author": "greatming",
+  "license": "ISC",
+  "dependencies": {
+    "@assemblyscript/loader": "^0.19.23"
+  },
+  "devDependencies": {
+    "assemblyscript": "^0.19.23"
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chengreatming/js-wasm-c-performance-test.git"
+  },
+  "keywords": [
+    "JavaScript",
+    "Webassembly",
+    "C"
+  ],
+  "bugs": {
+    "url": "https://github.com/chengreatming/js-wasm-c-performance-test/issues"
+  },
+  "homepage": "https://github.com/chengreatming/js-wasm-c-performance-test#readme"
+}
